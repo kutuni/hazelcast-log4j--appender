@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  
+	newInstance            : false mean; jvm allready have a intialized hazelcast instance. Accessing instance from instaceName.
+	                         true mean ; appender initialized new hazelcastclient instance. Using address (ip/hostname) value.
+	instanceName           : Using with allready have instance options, need accessing hazelcast instance from name.
+	queueName              : HC Graylog Plugin configured by default queue name is loggerQ. Dont change.
+	connectionAttemptPeriod: Please refer to hazelcast documantation.
+	connectionAttemptLimit :Please refer to hazelcast documantation.
+	address                :if set newInstance=true, appender initializing new hazelcastclientInstance with address.
+-->
+
+
+<Configuration status="info" packages="kutuni.log4j2">
+	<Appenders>
+		<HAZELCAST name="hazelcastAppender" 
+			newInstance="true"
+			instanceName="local" 
+			queueName="loggerQ" 
+			connectionAttemptPeriod="1000"
+			connectionAttemptLimit="3" 
+			address="192.168.0.14"
+			additionalFields="appName=unittest,hostname=${hostName},jdk=${java:runtime},context=${web:servletContextName}" />
+		<!-- additionalFields="appName=unittest,hostname=${hostName},jdk=${java:runtime},vm=${java:vm},os=${java:os},hw=${java:hw},lang=${java:locale} 
+			"/> -->
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%thread] [%c{1.}] - %m%n" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="kutuni" 
+			level="trace">
+		</Logger>
+		<Root level="error">
+			<AppenderRef ref="hazelcastAppender" />
+ 			<AppenderRef ref="STDOUT"/>
+		</Root>
+	</Loggers>
+
+</Configuration>
