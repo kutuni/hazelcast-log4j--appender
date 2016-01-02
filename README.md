@@ -1,6 +1,6 @@
 # Hazelcast Appender for Apache Log4j2
 
-This appender for [Apache Log4j 2](https://logging.apache.org/log4j/2.x/) logs messages to a Graylog2 server like [Graylog2](http://www.graylog2.org). Need Graylog2-HCPlugin.
+This appender for [Apache Log4j2](https://logging.apache.org/log4j/2.x/) logs messages send to a [Graylog2](http://www.graylog2.org) servers by [Hazelcast](http://hazelcast.org) cluster. Plugin designed work together [Graylog2-HCPlugin](https://github.com/kutuni/graylog-plugin-hazelcast).
 
 
 You can specify the following parameters for the GELF appender in the `log4j2.xml` configuration file:
