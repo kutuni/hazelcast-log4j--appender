@@ -29,14 +29,11 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:Graylog2/log4j2-gelf.git</connection>
-        <developerConnection>scm:git:git@github.com:Graylog2/log4j2-gelf.git</developerConnection>
-        <url>https://github.com/Graylog2/log4j2-gelf</url>
+        <connection>scm:git:git@github.com/kutuni/hazelcast-log4j--appender.git</connection>
+        <developerConnection>scm:git:git@github.com/kutuni/hazelcast-log4j--appender.git</developerConnection>
+        <url>https://github.com/kutuni/hazelcast-log4j--appender</url>
         <tag>HEAD</tag>
     </scm>
-
-
-
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
